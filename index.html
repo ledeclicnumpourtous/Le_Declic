@@ -94,8 +94,8 @@
             </div>
             <a href="#" class="btn-masquer js-close">Masquer</a> <!--bouton cliquable pour masquer-->
         </div>
-
-        <div class="MEP-carte" id="container-logement"> <!--gere la grille et recoit contenu par script java-->
+        <!--gere la grille et recoit contenu par script java-->
+        <div class="MEP-carte" id="container-logement"> 
             </div>
 
     </section>
@@ -256,6 +256,23 @@
                 }
             }
 
+            // On liste toutes les catégories de ton site
+            const toutesLesCategories = ['sante', 'emploi', 'papiers', 'logement', 'outils', 'aide'];
+            
+            toutesLesCategories.forEach(cat => {
+                const container = document.getElementById(`container-${cat}`);
+                
+                // Si la boîte existe et qu'elle est totalement vide (0 vidéo dedans)
+                if (container && container.innerHTML.trim() === '') {
+                    container.innerHTML = `
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; background: #fff; border-radius: 12px; border: 2px dashed #e0e0e0;">
+                            <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🚧</span>
+                            <h3 style="color: #2c3e50; margin-bottom: 5px;">Vidéos en cours de création</h3>
+                            <p style="color: #7f8c8d; font-size: 0.95rem;">Nos tutoriels pour cette catégorie arrivent très vite. Merci de votre patience !</p>
+                        </div>
+                    `;
+                }
+            });
 
 // --- PARTIE 2 : LA NAVIGATION ---
         
@@ -362,4 +379,3 @@
     </script>
 </body>
 </html>
-
