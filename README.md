@@ -47,4 +47,4 @@ Pour ajouter un nouveau tutoriel, suivez ces étapes :
   <priority>0.8</priority>
 </url>
 ```
-Enregistrer : Validez vos modifications sur GitHub via un Commit. Le site se mettra à jour automatiquement en quelques minutes.
+### Enregistrer : Validez vos modifications sur GitHub via un Commit. Le site se mettra à jour automatiquement en quelques minutes.
