@@ -31,7 +31,7 @@
 
     <nav class="entete"> <!--creation de l'entete-->
         <div class="logo">
-            <img src="logo_declic.png" alt="Logo"><!--ajout du logo-->
+            <img src="logo_declic.png" alt="Logo Le Déclic"><!--ajout du logo-->
             <div><strong>Le Déclic</strong><br>
                 <small>Réduire la fracture numérique</small>
             </div>
@@ -73,6 +73,11 @@
                 </div>
 
             </div>
+        </div>
+        <div id="zone-faq" class="faq-container" style="display: none;">
+            <h2 style="margin-bottom: 15px; font-size: 1.3rem;">💡 Questions fréquentes</h2>
+                <div id="liste-faq">
+                </div>
         </div>
     </main>
 
@@ -119,6 +124,36 @@
                     btnVu.style.backgroundColor = "#2ecc71"; // On remet le beau vert
                     btnVu.style.opacity = "1";
                 }
+            }
+
+            // --- GESTION DE LA FAQ ---
+            const zoneFaq = document.getElementById('zone-faq');
+            const listeFaq = document.getElementById('liste-faq');
+
+            if (info.faq && info.faq.length > 0) {
+                zoneFaq.style.display = 'block'; // On montre la section
+                listeFaq.innerHTML = info.faq.map(item => `
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ${item.question}
+                            <span class="fleche">▼</span>
+                        </div>
+                        <div class="faq-reponse">
+                            ${item.reponse}
+                        </div>
+                    </div>
+                `).join('');
+
+                // Animation d'ouverture
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.addEventListener('click', () => {
+                        const item = q.parentElement;
+                        item.classList.toggle('active');
+                        // On change le sens de la flèche
+                        const fleche = q.querySelector('.fleche');
+                        fleche.innerText = item.classList.contains('active') ? '▲' : '▼';
+                    });
+                });
             }
 
             // 1. Au chargement de la page, on applique le bon design

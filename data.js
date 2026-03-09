@@ -8,7 +8,18 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         categorie: "papiers",  // Doit correspondre à l'ID dans le HTML
         image: "https://via.placeholder.com/300x180", //image miniature
         tags: ["Permis", "ANTS", "NEPH"], // les badges
-        lienOfficiel: "https://permisdeconduire.ants.gouv.fr/"
+        lienOfficiel: "https://permisdeconduire.ants.gouv.fr/",
+        // --- La FAQ ---
+        faq: [
+            { 
+                question: "C'est quoi le numéro NEPH ?", 
+                reponse: "C'est ton numéro de candidat (12 chiffres). Il est obligatoire pour s'inscrire à l'examen du code ou du permis." 
+            },
+            { 
+                question: "Combien de temps faut-il pour le recevoir ?", 
+                reponse: "Le délai moyen est de 2 à 4 semaines après la validation de ton dossier sur le site de l'ANTS." 
+            }
+        ]
     },
     //video LinkedIn
     "compte-linkedin": {
@@ -19,7 +30,17 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         categorie: "emploi",
         image: "https://via.placeholder.com/300x180",
         tags: ["LinkedIn", "Emploi", "Réseau"],
-        lienOfficiel: "https://www.linkedin.com/"
+        lienOfficiel: "https://www.linkedin.com/",
+        faq: [
+            { 
+                question: "Est-ce que l'inscription est payante ?", 
+                reponse: "Non, l'utilisation de base pour créer ton profil, chercher des offres et contacter des gens est gratuite." 
+            },
+            { 
+                question: "Les recruteurs voient-ils que je cherche un job ?", 
+                reponse: "Oui, si tu actives l'option 'À l'écoute' sur ton profil. Tu peux choisir de ne le montrer qu'aux recruteurs." 
+            }
+        ]
     },
     //Compte ANTS
     "connexion-ants": {
@@ -30,7 +51,17 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         categorie: "papiers",
         image: "https://via.placeholder.com/300x180",
         tags: ["ANTS", "FranceConnect", "Démarches", "Compte"],
-        lienOfficiel: "https://ants.gouv.fr/"
+        lienOfficiel: "https://ants.gouv.fr/",
+        faq: [
+            { 
+                question: "Pourquoi utiliser FranceConnect ?", 
+                reponse: "Cela permet de se connecter avec tes identifiants Ameli ou Impôts, sans avoir à créer un nouveau mot de passe." 
+            },
+            { 
+                question: "Je ne trouve pas mon dossier en cours ?", 
+                reponse: "Regarde dans l'onglet 'Mon compte' puis 'Mes démarches en cours' sur ton tableau de bord ANTS." 
+            }
+        ]
     },
     //compte google
     "compte-google": {
@@ -41,7 +72,17 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         categorie: "outils",
         image: "https://via.placeholder.com/300x180",
         tags: ["Google", "Gmail", "Bureautique"],
-        lienOfficiel: "https://accounts.google.com/"
+        lienOfficiel: "https://accounts.google.com/",
+        faq: [
+            { 
+                question: "Est-ce que c'est gratuit ?", 
+                reponse: "Oui, la création d'un compte Google et l'utilisation de Gmail sont entièrement gratuites." 
+            },
+            { 
+                question: "J'ai oublié mon mot de passe, que faire ?", 
+                reponse: "Clique sur 'Mot de passe oublié' lors de la connexion. Google t'enverra un code de récupération par SMS ou sur ton e-mail de secours." 
+            }
+        ]
     },
     //video rédiger un mail
     "rediger-mail-gmail": {
@@ -52,6 +93,16 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         categorie: "outils",
         image: "https://via.placeholder.com/300x180",
         tags: ["Google", "Gmail", "Bureautique", "Email"],
-        lienOfficiel: "https://mail.google.com/"
+        lienOfficiel: "https://mail.google.com/",
+        faq: [
+            { 
+                question: "C'est quoi la différence entre CC et CCI ?", 
+                reponse: "CC est visible par tous les destinataires. CCI cache les adresses pour que personne ne sache à qui d'autre tu as écrit." 
+            },
+            { 
+                question: "Comment savoir si mon mail est bien parti ?", 
+                reponse: "Tu peux vérifier dans le dossier 'Messages envoyés' dans la colonne de gauche de ton compte Gmail." 
+            }
+        ]
     }
 };

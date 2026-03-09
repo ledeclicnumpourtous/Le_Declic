@@ -79,7 +79,7 @@ h1 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0px;
+    padding-bottom: 50px; /* 👈 Ajoute une marge de sécurité en bas de chaque page */
 }
 
 h2 {
@@ -258,6 +258,91 @@ h2 {
     z-index: 2; /* Pour être sûr qu'il passe par dessus l'image */
 }
 
+/* --- CAROUSEL --- */
+.carousel {
+    display: flex;
+    overflow-x: auto; /* Active le défilement horizontal */
+    gap: 20px;
+    padding: 10px 5px 20px 5px; /* Laisse de la place pour l'ombre au survol */
+    scroll-snap-type: x mandatory; /* Effet "aimant" très satisfaisant sur téléphone */
+    -webkit-overflow-scrolling: touch; /* Rend le glissement très fluide sur mobile */
+}
+
+/* On stylise la barre de défilement pour la rendre discrète et élégante */
+.carousel::-webkit-scrollbar {
+    height: 8px;
+}
+.carousel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.carousel::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+/* On force la largeur des LIENS qui contiennent les cartes */
+.carousel a {
+    flex: 0 0 300px; /* C'est le lien qui fixe la largeur maintenant */
+    scroll-snap-align: start; /* S'aimante au début du cadre */
+    display: block; /* Indispensable pour qu'un lien se comporte comme une boîte */
+}
+
+/* La carte prend simplement toute la place dans son lien */
+.carousel .card-video {
+    height: 100%; 
+}
+
+/* --- FAQ ACCORDÉON --- */
+.faq-container {
+    margin-top: 25px;
+}
+
+.faq-item {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.faq-question {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #f8f9fa;
+}
+
+.faq-reponse {
+    padding: 0 20px;
+    max-height: 0; /* Caché par défaut */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s;
+    color: #555;
+    line-height: 1.6;
+    border-top: 0 solid #eee;
+}
+.fleche {
+    margin-left: 15px; /* Évite que la flèche ne colle au texte */
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Classe ajoutée par le JavaScript quand on ouvre */
+.faq-item.active .faq-reponse {
+    max-height: 200px; /* On laisse de la place pour le texte */
+    padding: 15px 20px;
+    border-top-width: 1px;
+}
+
 /* =========================================
    VERSION MOBILE (Pour les écrans < 768px)
    ========================================= */
@@ -325,45 +410,8 @@ h2 {
         align-items: flex-start;
         gap: 10px;
     }
-}
-
-/* --- CAROUSEL --- */
-.carousel {
-    display: flex;
-    overflow-x: auto; /* Active le défilement horizontal */
-    gap: 20px;
-    padding: 10px 5px 20px 5px; /* Laisse de la place pour l'ombre au survol */
-    scroll-snap-type: x mandatory; /* Effet "aimant" très satisfaisant sur téléphone */
-    -webkit-overflow-scrolling: touch; /* Rend le glissement très fluide sur mobile */
-}
-
-/* On stylise la barre de défilement pour la rendre discrète et élégante */
-.carousel::-webkit-scrollbar {
-    height: 8px;
-}
-.carousel::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-.carousel::-webkit-scrollbar-thumb {
-    background: #c1c1c1;
-    border-radius: 10px;
-}
-
-/* On force la largeur des LIENS qui contiennent les cartes */
-.carousel a {
-    flex: 0 0 300px; /* C'est le lien qui fixe la largeur maintenant */
-    scroll-snap-align: start; /* S'aimante au début du cadre */
-    display: block; /* Indispensable pour qu'un lien se comporte comme une boîte */
-}
-
-/* La carte prend simplement toute la place dans son lien */
-.carousel .card-video {
-    height: 100%; 
-}
-
-/* Sur petit écran de téléphone, on rétrécit un peu la carte */
-@media (max-width: 768px) {
+    
+    /* Sur petit écran de téléphone, on rétrécit un peu la carte */
     .carousel a {
         flex: 0 0 260px; 
     }
