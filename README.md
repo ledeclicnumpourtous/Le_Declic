@@ -23,8 +23,9 @@ Le site est consultable en ligne à l'adresse suivante :
 ## 📝 Licence
 Ce projet est sous licence **MIT** (libre de droit pour un usage solidaire).
 
-➕ Ajouter une nouvelle vidéo
-Le catalogue des vidéos est géré de manière centralisée dans le fichier data.js. Pour ajouter un nouveau tutoriel, suivez ces étapes :
+##➕ Ajouter une nouvelle vidéo
+Le catalogue des vidéos est géré de manière centralisée dans le fichier data.js. 
+Pour ajouter un nouveau tutoriel, suivez ces étapes :
 
 Modifier data.js : Ouvrez le fichier et ajoutez un nouveau bloc dans l'objet catalogue en suivant ce modèle :
 
