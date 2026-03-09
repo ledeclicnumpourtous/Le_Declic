@@ -16,7 +16,12 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
             "Ton ASSR ou un justificatif de SNU",
             "Si tu es hébergé(e) : Pièce d'identité de l'hébergeur, son justificatif de domicile et une attestation d'hébergement"
         ],
-        // --- La FAQ ---
+        lexique: [
+            { mot: "NEPH", definition: "Numéro d'Enregistrement Préfectoral Harmonisé. C'est ton numéro de candidat à 12 chiffres." },
+            { mot: "PRIMATA", definition: "C'est le terme administratif pour dire que c'est ton tout premier permis." },
+            { mot: "E-photo", definition: "Photo d'identité faite dans un photomaton agréé, qui envoie directement ta signature à l'État." },
+            { mot: "Attestation d'hébergement", definition: "Une lettre signée par la personne chez qui tu vis (tes parents, un proche), pour prouver que tu habites bien à cette adresse." }
+        ],
         faq: [
             { 
                 question: "C'est quoi le numéro NEPH ?", 
@@ -38,6 +43,15 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         image: "https://via.placeholder.com/300x180",
         tags: ["LinkedIn", "Emploi", "Réseau"],
         lienOfficiel: "https://www.linkedin.com/",
+        documents: [
+            "Un CV à jour (idéalement au format PDF)", 
+            "Une photo de profil professionnelle", 
+            "Une adresse e-mail valide"
+        ],
+        lexique: [
+            { mot: "Relations", definition: "Sur LinkedIn, ce sont tes contacts. On ne dit pas 'followers' car c'est un réseau professionnel pour le travail." },
+            { mot: "Alternance", definition: "Un contrat où tu partages ton temps entre l'école (pour étudier) et une entreprise (pour travailler)." },
+        ],
         faq: [
             { 
                 question: "Est-ce que l'inscription est payante ?", 
@@ -59,6 +73,15 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         image: "https://via.placeholder.com/300x180",
         tags: ["ANTS", "FranceConnect", "Démarches", "Compte"],
         lienOfficiel: "https://ants.gouv.fr/",
+        documents: [
+            "Tes identifiants FranceConnect (compte Ameli, Impôts ou l'Identité Numérique)", 
+            "Ou une adresse e-mail valide (pour créer un compte classique)"
+        ],
+        lexique: [
+            { mot: "ANTS", definition: "Agence Nationale des Titres Sécurisés. C'est le site officiel de l'État pour faire tes papiers importants." },
+            { mot: "FranceConnect", definition: "Un bouton magique qui te permet de te connecter avec tes identifiants Ameli ou Impôts, sans créer de nouveau compte." },
+            { mot: "Duplicata", definition: "C'est un mot administratif qui veut dire 'une copie' ou 'un double' (à demander si tu as perdu l'original)." }
+        ],
         faq: [
             { 
                 question: "Pourquoi utiliser FranceConnect ?", 
@@ -82,6 +105,10 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         lienOfficiel: "https://accounts.google.com/",
         documents: [
             "Un numéro de téléphone portable (obligatoire pour recevoir le SMS de sécurité)"
+        ],
+        lexique: [
+            { mot: "Navigateur", definition: "Le logiciel que tu utilises pour aller sur internet (comme Google Chrome, Safari ou Firefox)." },
+            { mot: "Suite bureautique", definition: "Un ensemble d'outils pour travailler sur ordinateur (écrire des textes, faire des tableaux de calcul, etc.)." }
         ],
         faq: [
             { 
@@ -107,6 +134,10 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         documents: [
             "L'adresse e-mail exacte de la personne à qui tu écris (le destinataire)", 
             "Le document à envoyer en pièce jointe (comme ton CV, si besoin)"
+        ],
+        lexique: [
+            { mot: "Destinataire", definition: "La personne à qui tu envoies ton e-mail (celle qui se trouve dans la ligne 'À')." },
+            { mot: "Pièce jointe", definition: "Un fichier (comme ton CV en PDF ou une photo) que tu accroches à ton e-mail en cliquant sur le petit trombone." }
         ],
         faq: [
             { 

@@ -82,6 +82,11 @@
                     <div class="checklist-title" style="font-weight: bold; color: #ff6b35; margin-bottom: 10px;">📋 Documents à préparer :</div>
                     <div id="liste-documents"></div>
                 </div>
+
+                <div id="zone-lexique" class="lexique-container" style="display: none;">
+                    <div style="font-weight: bold; color: #3498db; margin-bottom: 10px;">📖 Mots compliqués :</div>
+                    <div id="liste-lexique"></div>
+                </div>
             </div>
 
         </div>
@@ -117,7 +122,7 @@
             // On regarde dans la mémoire si la vidéo a déjà été cliquée
             let videosVues = JSON.parse(localStorage.getItem('declic_vues')) || [];
 
-            // Petite fonction pratique pour mettre à jour le design du bouton
+            // fonction pratique pour mettre à jour le design du bouton
             function actualiserDesignBouton() {
                 if (videosVues.includes(videoId)) {
                     // État "Déjà vu"
@@ -142,6 +147,20 @@
                     <label class="checklist-item">
                         <input type="checkbox"> ${doc}
                     </label>
+                `).join('');
+            }
+
+            // --- GESTION DU LEXIQUE ---
+            const zoneLexique = document.getElementById('zone-lexique');
+            const listeLexique = document.getElementById('liste-lexique');
+
+            if (info.lexique && info.lexique.length > 0) {
+                zoneLexique.style.display = 'block';
+                listeLexique.innerHTML = info.lexique.map(item => `
+                    <div class="lexique-item">
+                        <span class="lexique-mot">📌 ${item.mot}</span>
+                        <span style="color: #555;">${item.definition}</span>
+                    </div>
                 `).join('');
             }
 
