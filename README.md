@@ -38,6 +38,7 @@ Modifier data.js : Ouvrez le fichier et ajoutez un nouveau bloc dans l'objet cat
     tags: ["Mot-clé1", "Mot-clé2"],
     lienOfficiel: "https://lien-vers-demarche.gouv.fr"
 },
+
 Mettre à jour le référencement : Pour que Google trouve cette nouvelle page, ajoutez son lien dans le fichier sitemap.xml :
 
 <url>
