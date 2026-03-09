@@ -29,7 +29,7 @@ Pour ajouter un nouveau tutoriel, suivez ces étapes :
 
 Modifier data.js : Ouvrez le fichier et ajoutez un nouveau bloc dans l'objet catalogue en suivant ce modèle :
 
-```javascript
+```
 "votre-id-unique": {
     titre: "Titre de la vidéo",
     description: "Courte description de la démarche.",
