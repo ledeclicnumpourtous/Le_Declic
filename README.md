@@ -24,27 +24,29 @@ Le site est consultable en ligne à l'adresse suivante :
 Ce projet est sous licence **MIT** (libre de droit pour un usage solidaire).
 
 ## ➕ Ajouter une nouvelle vidéo
-Le catalogue des vidéos est géré de manière centralisée dans le fichier data.js. 
+Le catalogue des vidéos est géré de manière centralisée dans le fichier data.js. 
 Pour ajouter un nouveau tutoriel, suivez ces étapes :
 
 Modifier data.js : Ouvrez le fichier et ajoutez un nouveau bloc dans l'objet catalogue en suivant ce modèle :
 
 ```
 "votre-id-unique": {
-    titre: "Titre de la vidéo",
-    description: "Courte description de la démarche.",
-    youtubeId: "CODE_YOUTUBE", // Les lettres à la fin de l'URL de la vidéo
-    duree: "X min",
-    categorie: "nom_categorie", // Doit être : sante, emploi, papiers, logement, outils ou aide
-    tags: ["Mot-clé1", "Mot-clé2"],
-    lienOfficiel: "[https://lien-vers-demarche.gouv.fr](https://lien-vers-demarche.gouv.fr)"
+    titre: "Titre de la vidéo",
+    description: "Courte description de la démarche.",
+    youtubeId: "CODE_YOUTUBE", // Les lettres à la fin de l'URL de la vidéo
+    duree: "X min",
+    categorie: "nom_categorie", // Doit être : sante, emploi, papiers, logement, outils ou aide
+    tags: ["Mot-clé1", "Mot-clé2"],
+    lienOfficiel: "[https://lien-vers-demarche.gouv.fr](https://lien-vers-demarche.gouv.fr)"
 },
-2. Mettre à jour le référencement
-Pour que Google trouve cette nouvelle page, ajoutez son lien dans le fichier sitemap.xml :
 
-XML
-  <loc>https://ledeclicnumpourtous.github.io/Le_Declic/video.html?id=votre-id-unique</loc>
-  <priority>0.8</priority>
-</url>```
+```
+
+Mettre à jour le référencement : Pour que Google trouve cette nouvelle page, ajoutez son lien dans le fichier sitemap.xml :
+
+<url>
+  <loc>https://ledeclicnumpourtous.github.io/Le_Declic/video.html?id=votre-id-unique</loc>
+  <priority>0.8</priority>
+</url>
 
 Enregistrer : Validez vos modifications sur GitHub via un Commit. Le site se mettra à jour automatiquement en quelques minutes.
