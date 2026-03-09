@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"> <!--L'encodage des caractères.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Adapte la largeur de la page à la largeur de l'écran du téléphone.-->
+    <title>Visionnage - Le Déclic</title> <!--le titre de la page web-->
+    <meta name="description" content="Regardez ce tutoriel vidéo pas à pas sur Le Déclic. Nous vous accompagnons simplement dans vos démarches administratives et l'utilisation de vos outils numériques.">
+    <link rel="stylesheet" href="style.css"> <!--connecter à notre CSS-->
+    <style>
+        /* CSS spécifique pour le lecteur vidéo */
+        .video-container { /*container qui fonctionne comme un cadre noir invisible*/
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 pour YouTube */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: black; /*fond noir par exemple lors du chargement*/
+            margin-bottom: 20px;
+        }
+        .video-container iframe { /*video à l'intérieur du container*/
+            position: absolute;
+            top: 0; /*se place en haut*/
+            left: 0; /*se place à gauche*/
+            width: 100%; /*prend toute la place*/
+            height: 100%; /*prend toute la place*/
+        }
+        .btn-retour { display: inline-block; margin-bottom: 5px; color: #ff6b35; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav class="entete"> <!--creation de l'entete-->
+        <div class="logo">
+            <img src="logo_declic.png" alt="Logo"><!--ajout du logo-->
+            <div><strong>Le Déclic</strong><br>
+                <small>Réduire la fracture numérique</small>
+            </div>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpw6yxnNbNqYryXsRxxkY8yEDxmKuPclJa8gB1R_F2c3tpLA/viewform?usp=publish-editor" class="bouton-contact">Nous contacter</a>
+    </nav>
+
+    <main class="container" style="margin-top: 20px;">
+        <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+        
+        <h1 id="titre-video">Chargement...</h1> <!--Affiche titre de la vidéo, si met du temps à charger affiche un titre temporaire-->
+        
+        <div class="video-container"> <!--lecteur video-->
+            <iframe id="player-youtube" src="" frameborder="0" allowfullscreen></iframe> <!--construit page Youtube vide dans lecteur pour script-->
+        </div>
+
+        <div class="card">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                <h3 style="margin: 0;">À propos de cette démarche</h3>
+                
+                <button id="btn-vu" class="bouton-contact" style="background-color: #2ecc71; border: none; cursor: pointer;">
+                    Marquer comme vue
+                </button>
+            </div>
+
+            <p id="desc-video">Description en cours de chargement...</p>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-top: 25px;">
+                
+                <div id="zone-action" style="display: none;">
+                    <a href="#" id="lien-officiel" target="_blank" class="bouton-contact" style="display: inline-block;">Faire ma démarche en ligne</a>
+                </div>
+
+                <div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNbxkOrLsDJs6x4nrlixsCU6ith2qAGRD34CmSKwIth8AyeQ/viewform?usp=publish-editor" target="_blank" class="bouton-contact" style="background-color: #3498db; display: inline-block;">
+                        🙋‍♂️ Poser une question
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="data.js"> //charfe le fichier data contenant les infos des videos 
+    </script>
+    
+    <script>
+        // 1. On regarde l'URL pour trouver l'ID (ex: video.html?id=apl-demande)
+        const params = new URLSearchParams(window.location.search); //recupere la partie apres le "?" dans l'URL du site
+        const videoId = params.get('id'); //recupere la partie apres "id="
+
+        // 2. On cherche les infos dans notre fichier data.js
+        const info = catalogue[videoId]; //mets dans la variable info les composantes de l'ID
+
+        // 3. Si on trouve la vidéo, on met à jour la page
+        if (info) {
+            document.getElementById('titre-video').innerText = info.titre; //cherhce la balise <h1> avec ID 'titre-video' et change le texte
+            document.getElementById('desc-video').innerText = info.description;
+            // On construit le lien YouTube
+            document.getElementById('player-youtube').src = "https://www.youtube.com/embed/" + info.youtubeId; //cration du lien youtube et chargement de la video avec ".src"
+            document.title = info.titre + " - Le Déclic";//Chang le titre de la page
+
+            // Gestion du lien officiel
+            if (info.lienOfficiel) {
+                document.getElementById('zone-action').style.display = 'block'; // On affiche la zone
+                document.getElementById('lien-officiel').href = info.lienOfficiel; // On met le bon lien
+            }
+
+            const btnVu = document.getElementById('btn-vu');
+            
+            // On regarde dans la mémoire si la vidéo a déjà été cliquée
+            let videosVues = JSON.parse(localStorage.getItem('declic_vues')) || [];
+
+            // Petite fonction pratique pour mettre à jour le design du bouton
+            function actualiserDesignBouton() {
+                if (videosVues.includes(videoId)) {
+                    // État "Déjà vu"
+                    btnVu.innerText = "✅ Vidéo vue (Annuler)";
+                    btnVu.style.backgroundColor = "#95a5a6"; // On le met en gris
+                    btnVu.style.opacity = "0.8";
+                } else {
+                    // État "Pas encore vu"
+                    btnVu.innerText = "Marquer comme vue";
+                    btnVu.style.backgroundColor = "#2ecc71"; // On remet le beau vert
+                    btnVu.style.opacity = "1";
+                }
+            }
+
+            // 1. Au chargement de la page, on applique le bon design
+            actualiserDesignBouton();
+
+            // 2. Quand on clique sur le bouton (l'interrupteur)
+            btnVu.addEventListener('click', () => {
+                if (videosVues.includes(videoId)) {
+                    // SCÉNARIO A : Elle était déjà vue, on l'ENLÈVE de la liste
+                    // filter() garde toutes les vidéos SAUF celle qu'on est en train de regarder
+                    videosVues = videosVues.filter(id => id !== videoId); 
+                } else {
+                    // SCÉNARIO B : Elle n'était pas vue, on l'AJOUTE à la liste
+                    videosVues.push(videoId);
+                }
+
+                // On sauvegarde la nouvelle liste (mise à jour) dans la mémoire
+                localStorage.setItem('declic_vues', JSON.stringify(videosVues));
+                
+                // On met à jour le visuel immédiatement
+                actualiserDesignBouton();
+            });
+
+        } else {
+            document.getElementById('titre-video').innerText = "Vidéo introuvable";//si on ne trouve pas la video affiche ce texte à la place
+        }
+    </script>
+</body>
+</html>
+

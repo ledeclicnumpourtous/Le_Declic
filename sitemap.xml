@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://benjij05.github.io/Projet_ouvert_test/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://benjij05.github.io/Projet_ouvert_test/video.html?id=permis-conduire</loc>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://benjij05.github.io/Projet_ouvert_test/video.html?id=compte-linkedin</loc>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://benjij05.github.io/Projet_ouvert_test/video.html?id=connexion-ants</loc>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://benjij05.github.io/Projet_ouvert_test/video.html?id=compte-google</loc>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://benjij05.github.io/Projet_ouvert_test/video.html?id=rediger-mail-gmail</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

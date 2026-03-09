@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://benjij05.github.io/Projet_ouvert_test/sitemap.xml

@@ -1,0 +1,370 @@
+body { /*les règles de base : police,couleur */
+    font-family: 'Segoe UI', sans-serif; /* sans-serif : backup */
+    background-color: #f8f9fa; /* Gris très clair */
+    color: #333;
+}
+
+/* 1. L'entete ' */
+.entete {
+    background: white;
+    padding: 15px 40px; /* espace de l'entete */
+    display: flex; /* Active le mode alignement */
+    justify-content: space-between; /* Pousse le logo à gauche et le bouton à droite */
+    align-items: center;
+    border-bottom: 1px solid #eee; /*Une ligne fine grise en bas pour séparer le menu du reste.*/
+}
+
+.logo {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    display: flex; /* Pour bien aligner l'image avec le texte */
+    align-items: center;
+    gap: 10px; /*espace entre le logo et le texte*/
+}
+.logo img {
+    height: 60px; /* Ajuste ce chiffre selon la taille voulue */
+    width: auto; /* Garde les proportions de l'image */
+}
+
+.logo small {
+    color: #7f8c8d;
+    font-size: 0.7em; /* 70% de la taille normale */
+}
+
+.bouton-contact {
+    background-color: #ff6b35; /* L'orange image */
+    color: white;
+    text-decoration: none; /*Supprime le soulignement moche par défaut des liens bleus.*/
+    padding: 10px 20px;
+    border-radius: 50px; /* Bords très ronds */
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* 2. Le titre principal (Recherche) */
+.main-title {
+    text-align: center;
+    padding: 0px 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #222;
+    font-weight: 600;
+}
+
+/* La barre de recherche */
+.search-container {
+    background: white;
+    width: 100%;
+    max-width: 700px; /* Ne dépasse pas 700px de large */
+    margin: 0 auto; /* Centre la barre */
+    padding: 15px 20px;
+    border-radius: 50px; /* Bords ronds */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Ombre douce */
+    align-items: center;
+    border: 1px solid #e0e0e0;
+}
+
+.search-input {
+    border: none; /* Enlève la bordure moche par défaut */
+    outline: none; /* Enlève le cadre bleu quand on clique */
+    width: 100%;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* 3. LA GRILLE DE CARTES */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Le système de grille */
+.MEP-carte {
+    display: grid; /* MEP de grille */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Magie : s'adapte aux écrans */
+    gap: 20px; /* Espace entre les cartes */
+}
+
+/* Grille spécifique pour les vidéos : forcé à 2 colonnes max */
+.section-videos .MEP-carte, 
+#zone-recherche .MEP-carte {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Le design d'une carte individuelle */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px; /* Coins arrondis */
+    border: 1px solid #eee; /* Bordure très fine */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02); /* Ombre très légère */
+    cursor: pointer; /* change le curseur de ta souris */
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* La carte monte un peu quand on la survole */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.icon-circle {
+    background-color: #e3f2fd; /* Bleu très pâle */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Cercle parfait */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2196f3; /* Bleu des icônes */
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.card p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* --- STYLE DES SECTIONS VIDÉOS --- */
+
+.section-videos {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+    animation: fadeIn 0.5s; /* Petit effet d'apparition fluide */
+}
+
+/* En-tête de la section vidéo (Titre + Masquer) */
+.video-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.btn-masquer {
+    color: #7f8c8d;
+    text-decoration: underline; /*souligne pour montrer que c'est un lien*/
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* --- CARTE VIDÉO SPÉCIFIQUE --- */
+.card-video {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden; /* Empêche l'image de dépasser des coins arrondis */
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card-video:hover {
+    transform: translateY(-5px);
+}
+
+/* Zone Image */
+.thumbnail { /*miniature: cadre qui entoure image*/
+    position: relative; /* Important pour placer la durée par dessus */
+    aspect-ratio: 16 / 9;
+    background-color: #ddd;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image remplit bien la zone */
+}
+
+.duree {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7); /* Fond noir transparent */
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Zone Texte */
+.video-content {
+    padding: 20px;
+}
+
+.video-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.description {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.video-content small {
+    display: block;
+    color: #95a5a6;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
+
+/* Les petits badges gris (tags) */
+.tags span {
+    background: #f1f2f6;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #2c3e50;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+/* Petite animation pour l'ouverture */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- BADGE DE PROGRESSION --- */
+.badge-vu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #2ecc71; /* Un beau vert pour dire "Validé" */
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 2; /* Pour être sûr qu'il passe par dessus l'image */
+}
+
+/* =========================================
+   VERSION MOBILE (Pour les écrans < 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* 1. L'Entête plus compact */
+    .entete {
+        padding: 10px 15px; /* On réduit les marges (avant: 15px 40px) */
+        flex-direction: column; /* On empile Logo et Bouton l'un sur l'autre */
+        gap: 10px; /* Un petit espace entre les deux */
+    }
+
+    .logo img {
+        height: 40px; /* On réduit le logo (avant: 60px) */
+    }
+
+    .bouton-contact {
+        width: 100%; /* Le bouton prend toute la largeur */
+        text-align: center; /* Texte centré */
+        padding: 8px 0; /* Un peu moins épais */
+    }
+
+    /* 2. Le Titre et la Recherche */
+    .main-title {
+        padding: 0px 15px; /* Moins d'espace vide autour */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Titre plus petit (avant: 2rem) */
+    }
+
+    .search-container {
+        width: 100%; /* Prend toute la largeur dispo */
+        box-sizing: border-box; /* S'assure que le padding ne casse pas la largeur */
+    }
+
+    /* 3. La Grille de Catégories (2 par ligne) */
+    .MEP-carte {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px; /* Espace réduit entre les cartes */
+    }
+    
+    .section-videos .MEP-carte, #zone-recherche .MEP-carte {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        padding: 15px; /* Moins de marge à l'intérieur des cartes */
+    }
+    
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .card h3 {
+        font-size: 1rem; /* Titre de carte un peu plus petit */
+    }
+
+    /* 4. Gestion de l'entête vidéo (Titre long qui casse tout) */
+    .video-header {
+        flex-direction: column; /* On met le bouton Masquer SOUS le titre */
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* --- CAROUSEL --- */
+.carousel {
+    display: flex;
+    overflow-x: auto; /* Active le défilement horizontal */
+    gap: 20px;
+    padding: 10px 5px 20px 5px; /* Laisse de la place pour l'ombre au survol */
+    scroll-snap-type: x mandatory; /* Effet "aimant" très satisfaisant sur téléphone */
+    -webkit-overflow-scrolling: touch; /* Rend le glissement très fluide sur mobile */
+}
+
+/* On stylise la barre de défilement pour la rendre discrète et élégante */
+.carousel::-webkit-scrollbar {
+    height: 8px;
+}
+.carousel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.carousel::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+/* On force la largeur des LIENS qui contiennent les cartes */
+.carousel a {
+    flex: 0 0 300px; /* C'est le lien qui fixe la largeur maintenant */
+    scroll-snap-align: start; /* S'aimante au début du cadre */
+    display: block; /* Indispensable pour qu'un lien se comporte comme une boîte */
+}
+
+/* La carte prend simplement toute la place dans son lien */
+.carousel .card-video {
+    height: 100%; 
+}
+
+/* Sur petit écran de téléphone, on rétrécit un peu la carte */
+@media (max-width: 768px) {
+    .carousel a {
+        flex: 0 0 260px; 
+    }
+}

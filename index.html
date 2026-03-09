@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"> <!--L'encodage des caractères.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Adapte la largeur de la page à la largeur de l'écran du téléphone.-->
+    <meta name="google-site-verification" content="ZJ17U2MjwLPLSK6fsxYixqTYV027T-jlp7sGYkFUqGk" />
+    <title>Le declic</title> <!--le titre de la page web-->
+    <meta name="description" content="Le Déclic vous aide à réduire la fracture numérique avec des tutoriels vidéos simples pour vos démarches administratives et outils du quotidien (santé, emploi, impôts).">
+    <link rel="stylesheet" href="style.css"> <!--connecter à notre CSS-->
+</head>
+<body>
+    <nav class="entete"> <!--creation de l'entete-->
+        <div class="logo">
+            <img src="logo_declic.png" alt="Logo Le Déclic"> <!--ajout du logo-->
+            <div> <strong>Le Déclic</strong><br>
+                <small>Réduire la fracture numérique</small>
+            </div>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpw6yxnNbNqYryXsRxxkY8yEDxmKuPclJa8gB1R_F2c3tpLA/viewform?usp=publish-editor" class="bouton-contact">Nous contacter</a>
+
+    </nav>
+
+    <header class="main-title"> 
+        <h1>Vos démarches/outils du quotidien expliqués en vidéo</h1>
+        
+        <div class="search-container"><!--utilisation de div pour grouper en bloc-->
+            <input type="text" id="search-input" placeholder="Je cherche à..." class="search-input"> <!--input : La zone où l'utilisateur écrit.--> <!--placeholder : Le texte gris fantôme-->
+        </div>
+
+    </header>
+
+    <main class="container">
+
+        <div id="zone-recherche" style="display: none;">
+            <h2>Résultats de la recherche <span id="compteur-resultats" style="font-size: 0.8rem; color: #777;"></span></h2>
+            <div class="MEP-carte" id="container-resultats">
+                </div>
+            <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
+        </div>
+
+        <div id="zone-categories"> <h2>Toutes les catégories</h2>
+        
+            <div class="MEP-carte">
+                <div class="card js-trigger" data-target="sante">
+                    <div class="icon-circle">❤️</div>
+                    <h3>Santé</h3>
+                    <p>Carte vitale, rendez-vous médecin...</p>
+                </div>
+
+                <div class="card js-trigger" data-target="emploi">
+                    <div class="icon-circle">💼</div>
+                    <h3>Emploi</h3>
+                    <p>CV, Pôle Emploi, entretiens...</p>
+                </div>
+
+                <div class="card js-trigger" data-target="papiers">
+                    <div class="icon-circle">📄</div>
+                    <h3>Papiers</h3>
+                    <p>CNI, passeport, actes...</p>
+                </div>
+
+                <div class="card js-trigger" data-target="logement">
+                    <div class="icon-circle">🏠</div>
+                    <h3>Logement</h3>
+                    <p>APL, recherche, bail...</p>
+                </div>
+
+                <div class="card js-trigger" data-target="outils">
+                    <div class="icon-circle">💻</div>
+                    <h3>Outils numériques</h3>
+                    <p>Boîte mail, navigation, applications web...</p>
+                </div>
+
+                <div class="card js-trigger" data-target="aide">
+                    <div class="icon-circle">💳</div>
+                    <h3>Aides & Droits</h3>
+                    <p>RSA, CAF, prime d'activité...</p>
+                </div>
+
+            </div>
+        </div>
+
+    <div id="zone-tutos-populaires" style="margin-bottom: 40px;">
+            <h2> Les tutos les plus regardés</h2>
+            <div class="carousel" id="container-carousel">
+                </div>
+        </div>
+
+    <section id="section-logement" class="section-videos" style="display: none;"> <!--section: indique que c'est un "chapitre" de la page; id: adresse de la zone; style: masquer par defaut-->
+        <div class="video-header">
+            <div>
+                <h2>Logement</h2>
+                <p>Tous les tutoriels pour trouver et gérer votre logement</p>
+            </div>
+            <a href="#" class="btn-masquer js-close">Masquer</a> <!--bouton cliquable pour masquer-->
+        </div>
+
+        <div class="MEP-carte" id="container-logement"> <!--gere la grille et recoit contenu par script java-->
+            </div>
+
+    </section>
+
+    <section id="section-sante" class="section-videos" style="display: none;"> 
+        <div class="video-header">
+            <div>
+                <h2>Santé</h2>
+                <p>Vos droits et démarches santé</p>
+            </div>
+            <a href="#" class="btn-masquer js-close">Masquer</a>
+        </div>
+
+        <div class="MEP-carte" id="container-sante">
+            </div>
+
+    </section>
+
+    <section id="section-emploi" class="section-videos" style="display: none;"> 
+        <div class="video-header">
+            <div>
+                <h2>Emploi</h2>
+                <p>Vos droits et démarches pour l'emploi</p>
+            </div>
+            <a href="#" class="btn-masquer js-close">Masquer</a>
+        </div>
+
+        <div class="MEP-carte" id="container-emploi">
+            </div>
+
+    </section>
+
+    <section id="section-aide" class="section-videos" style="display: none;"> 
+        <div class="video-header">
+            <div>
+                <h2>Aides et Droits</h2>
+                <p>Vos droits et démarches pour les aides et droits</p>
+            </div>
+            <a href="#" class="btn-masquer js-close">Masquer</a>
+        </div>
+
+        <div class="MEP-carte" id="container-aide">
+            </div>
+
+    </section>
+
+    <section id="section-papiers" class="section-videos" style="display: none;"> 
+        <div class="video-header">
+            <div>
+                <h2>Papiers</h2>
+                <p>Vos droits et démarches pour vos papiers</p>
+            </div>
+            <a href="#" class="btn-masquer js-close">Masquer</a>
+        </div>
+
+        <div class="MEP-carte" id="container-papiers">
+            </div>
+
+    </section>
+
+    <section id="section-outils" class="section-videos" style="display: none;"> 
+        <div class="video-header">
+            <div>
+                <h2>Outils numériques</h2>
+                <p>Maîtrisez les outils essentiels d'Internet et de la bureautique.</p>
+            </div>
+            <a href="#" class="btn-masquer js-close">Masquer</a>
+        </div>
+
+        <div class="MEP-carte" id="container-outils">
+            </div>
+
+    </section>
+
+    </main>
+
+
+    <script src="data.js">
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { //securite: attend que la page soit chargee pour executer la suite
+
+            // On récupère la mémoire des vidéos vues
+            const videosVues = JSON.parse(localStorage.getItem('declic_vues')) || [];
+            
+        // --- LE CAROUSEL DES VIDÉOS POPULAIRES ---
+            const containerCarousel = document.getElementById('container-carousel');
+            
+            // Ici, tu mets les ID des vidéos que tu veux afficher dans le carrousel !
+            const videosPopulaires = ["permis-conduire","compte-linkedin", "connexion-ants", "compte-google","rediger-mail-gmail"];
+
+            videosPopulaires.forEach(idVideo => {
+                const info = catalogue[idVideo];
+                if (info && containerCarousel) {
+                    
+                    // On prépare les badges comme d'habitude
+                    const tagsHTML = info.tags.map(tag => `<span>${tag}</span>`).join(' ');
+                    const badgeHTML = videosVues.includes(idVideo) ? `<span class="badge-vu">✅ Vu</span>` : '';
+                    
+                    const carteHTML = `
+                        <a href="video.html?id=${idVideo}" style="text-decoration: none; color: inherit;">
+                            <div class="card-video">
+                                <div class="thumbnail">
+                                    ${badgeHTML}
+                                    <img src="https://img.youtube.com/vi/${info.youtubeId}/hqdefault.jpg" alt="${info.titre}">
+                                    <span class="duree">${info.duree}</span>
+                                </div>
+                                <div class="video-content">
+                                    <h3>${info.titre}</h3>
+                                    <p class="description">${info.description}</p>
+                                    <div class="tags">${tagsHTML}</div>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                    containerCarousel.innerHTML += carteHTML;
+                }
+            });
+
+
+
+            // --- PARTIE 1 : LE GÉNÉRATEUR DE CARTES  ---
+            
+            // On boucle sur chaque vidéo du catalogue
+            // Object.entries transforme ton catalogue en une liste utilisable
+            for (const [idVideo, info] of Object.entries(catalogue)) {
+                const container = document.getElementById(`container-${info.categorie}`); //tri des infos : recherche div correspondant
+                
+                if (container) { //verifie si la boite existe
+                    // On prépare les petits tags (badges)
+                    const tagsHTML = info.tags.map(tag => `<span>${tag}</span>`).join(' ');// map() transforme la liste ["a", "b"] en "<span>a</span><span>b</span>"
+
+                    const badgeHTML = videosVues.includes(idVideo) ? `<span class="badge-vu">✅ Vu</span>` : ''; // On vérifie si l'ID est dans la mémoire. Si oui, on prépare le badge.
+
+                    // on cree le HTML de la carte
+                    const carteHTML = `
+                        <a href="video.html?id=${idVideo}" style="text-decoration: none; color: inherit;">
+                            <div class="card-video">
+                                <div class="thumbnail">
+                                    ${badgeHTML}
+                                    <img src="https://img.youtube.com/vi/${info.youtubeId}/hqdefault.jpg" alt="${info.titre}">
+                                    <span class="duree">${info.duree}</span>
+                                </div>
+                                <div class="video-content">
+                                    <h3>${info.titre}</h3>
+                                    <p class="description">${info.description}</p>
+                                    <div class="tags">
+                                        ${tagsHTML}
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+
+                    // 3. On injecte la carte dans la boite
+                    container.innerHTML += carteHTML;
+                }
+            }
+
+
+// --- PARTIE 2 : LA NAVIGATION ---
+        
+        const triggers = document.querySelectorAll('.js-trigger'); //recupere tous les boutons
+        const allSections = document.querySelectorAll('.section-videos'); //recupere les zones cachees
+
+        triggers.forEach(card => {
+            card.addEventListener('click', function() { //quand on clique :
+                const targetName = this.getAttribute('data-target'); //recupere mot-cle de la categorie
+                const targetSection = document.getElementById('section-' + targetName); //trouve dans la page la section correspondante à l'id
+
+                if (targetSection) {
+                    const isDejaOuvert = targetSection.style.display === 'block'; //on regarde si cette section est deja ouverte
+
+                    allSections.forEach(sec => sec.style.display = 'none'); //ferme toutes les sections (comme ça on repart à zéro)
+
+                    if (!isDejaOuvert) { //logique de bascule
+                        targetSection.style.display = 'block';
+
+                        setTimeout(() => { //attend un tout petit peu et on scrolle
+                            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 50);
+                    }
+                }
+            });
+        });
+
+        // bouton "Masquer"
+        document.body.addEventListener('click', function(e) { //document.body: partie visible par utilisateur de la page; addEventListener('click', ...): enregistre l'ensemble des clicks; function(e): rapport d'incident, fonction se declence au click avec pour event 'e'
+            if (e.target.classList.contains('js-close')) { //filtre : remonte à la balise et regarde si l'element clique porte le badge 'js-close'
+                e.preventDefault(); //bloque comportement par defaut: evite la balise '#' qui fait remonter en haut de la page
+                e.target.closest('.section-videos').style.display = 'none'; //.closest('.section-videos'): remontre l'abre parent jusqu'à 'section-videos'; puis cache la section
+            }
+        });
+
+    // --- PARTIE 3 : LE MOTEUR DE RECHERCHE ---
+
+        const searchInput = document.getElementById('search-input');
+        const zoneRecherche = document.getElementById('zone-recherche');
+        const containerResultats = document.getElementById('container-resultats');
+        const zoneCategories = document.getElementById('zone-categories');
+        const compteurResultats = document.getElementById('compteur-resultats');
+
+        // On écoute ce que l'utilisateur tape
+        searchInput.addEventListener('input', (e) => {
+            const texteRecherche = e.target.value.toLowerCase(); // On met tout en minuscule pour comparer (CAF = caf)
+
+            // SCENARIO 1 : Le champ est vide -> On remet l'affichage normal
+            if (texteRecherche === "") {
+                zoneRecherche.style.display = 'none';
+                zoneCategories.style.display = 'block';
+                return; // On arrête la fonction ici
+            }
+
+            // SCENARIO 2 : Il y a du texte -> On lance la recherche
+            zoneRecherche.style.display = 'block';
+            zoneCategories.style.display = 'none';
+            containerResultats.innerHTML = ''; // On vide les anciens résultats
+
+            let nombreTrouve = 0;
+
+            // On cherche dans tout le catalogue
+            for (const [idVideo, info] of Object.entries(catalogue)) {
+                // On vérifie si le texte est dans le TITRE ou dans les TAGS
+                const titreOk = info.titre.toLowerCase().includes(texteRecherche);
+                // info.tags est une liste, on vérifie si l'un des tags contient le texte
+                const tagOk = info.tags.some(tag => tag.toLowerCase().includes(texteRecherche));
+
+                if (titreOk || tagOk) {
+                    nombreTrouve++;
+                    
+                    // On recycle ton code de création de carte (copier-coller intelligent)
+                    const tagsHTML = info.tags.map(tag => `<span>${tag}</span>`).join(' ');
+                    
+                    const carteHTML = `
+                        <a href="video.html?id=${idVideo}" style="text-decoration: none; color: inherit;">
+                            <div class="card-video">
+                                <div class="thumbnail">
+                                    <img src="https://img.youtube.com/vi/${info.youtubeId}/hqdefault.jpg" alt="${info.titre}">
+                                    <span class="duree">${info.duree}</span>
+                                </div>
+                                <div class="video-content">
+                                    <h3>${info.titre}</h3>
+                                    <p class="description">${info.description}</p>
+                                    <div class="tags">${tagsHTML}</div>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                    containerResultats.innerHTML += carteHTML;
+                }
+            }
+
+            // Petit détail UX : Afficher combien on a trouvé
+            if (nombreTrouve === 0) {
+                containerResultats.innerHTML = '<p>Aucun résultat trouvé pour cette recherche.</p>';
+                compteurResultats.innerText = '';
+            } else {
+                compteurResultats.innerText = `(${nombreTrouve} vidéo${nombreTrouve > 1 ? 's' : ''})`;
+            }
+        });
+
+        });
+    </script>
+</body>
+</html>
+
