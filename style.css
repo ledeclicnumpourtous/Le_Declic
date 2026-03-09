@@ -456,5 +456,6 @@ h2 {
 
     .video-page-layout {
         flex-direction: column;
+        gap: 5px;
     }
 }
