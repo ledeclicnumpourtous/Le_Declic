@@ -343,6 +343,44 @@ h2 {
     border-top-width: 1px;
 }
 
+.video-page-layout {
+    display: flex;          /* Active les deux colonnes */
+    gap: 30px;              /* Espace entre vidéo et aide */
+    align-items: flex-start;
+}
+
+.video-main-col {
+    flex: 3;                /* La vidéo prend 75% de la largeur */
+}
+
+.video-side-col {
+    flex: 1;                /* La colonne d'aide prend 1/3 */
+}
+
+/* --- DESIGN DE LA CHECKLIST (PC & MOBILE) --- */
+.checklist-container {
+    background-color: #fff9f4;
+    border-left: 5px solid #ff6b35;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.checklist-item input { 
+    width: 18px; 
+    height: 18px; 
+    cursor: pointer; 
+}
+
 /* =========================================
    VERSION MOBILE (Pour les écrans < 768px)
    ========================================= */
@@ -414,5 +452,9 @@ h2 {
     /* Sur petit écran de téléphone, on rétrécit un peu la carte */
     .carousel a {
         flex: 0 0 260px; 
+    }
+
+    .video-page-layout {
+        flex-direction: column;
     }
 }

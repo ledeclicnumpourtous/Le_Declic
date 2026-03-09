@@ -41,43 +41,49 @@
 
     <main class="container" style="margin-top: 20px;">
         <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
-        
-        <h1 id="titre-video">Chargement...</h1> <!--Affiche titre de la vidéo, si met du temps à charger affiche un titre temporaire-->
-        
-        <div class="video-container"> <!--lecteur video-->
-            <iframe id="player-youtube" src="" frameborder="0" allowfullscreen></iframe> <!--construit page Youtube vide dans lecteur pour script-->
-        </div>
+        <h1 id="titre-video">Chargement...</h1>
 
-        <div class="card">
+        <div class="video-page-layout">
             
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
-                <h3 style="margin: 0;">À propos de cette démarche</h3>
-                
-                <button id="btn-vu" class="bouton-contact" style="background-color: #2ecc71; border: none; cursor: pointer;">
-                    Marquer comme vue
-                </button>
+            <div class="video-main-col">
+                <div class="video-container">
+                    <iframe id="player-youtube" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                        <h3 style="margin: 0;">À propos de cette démarche</h3>
+                        <button id="btn-vu" class="bouton-contact" style="background-color: #2ecc71; border: none; cursor: pointer;">
+                            Marquer comme vue
+                        </button>
+                    </div>
+                    <p id="desc-video">Description en cours de chargement...</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-top: 25px;">
+                        <div id="zone-action" style="display: none;">
+                            <a href="#" id="lien-officiel" target="_blank" class="bouton-contact" style="display: inline-block;">Faire ma démarche en ligne</a>
+                        </div>
+                        <div>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNbxkOrLsDJs6x4nrlixsCU6ith2qAGRD34CmSKwIth8AyeQ/viewform?usp=publish-editor" target="_blank" class="bouton-contact" style="background-color: #3498db; display: inline-block;">
+                                🙋‍♂️ Poser une question
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="zone-faq" class="faq-container" style="display: none;">
+                    <h2 style="margin-bottom: 15px; font-size: 1.3rem;">💡 Questions fréquentes</h2>
+                    <div id="liste-faq"></div>
+                </div>
+
             </div>
 
-            <p id="desc-video">Description en cours de chargement...</p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-top: 25px;">
-                
-                <div id="zone-action" style="display: none;">
-                    <a href="#" id="lien-officiel" target="_blank" class="bouton-contact" style="display: inline-block;">Faire ma démarche en ligne</a>
+            <div class="video-side-col">
+                <div id="zone-documents" class="checklist-container" style="display: none;">
+                    <div class="checklist-title" style="font-weight: bold; color: #ff6b35; margin-bottom: 10px;">📋 Documents à préparer :</div>
+                    <div id="liste-documents"></div>
                 </div>
-
-                <div>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNbxkOrLsDJs6x4nrlixsCU6ith2qAGRD34CmSKwIth8AyeQ/viewform?usp=publish-editor" target="_blank" class="bouton-contact" style="background-color: #3498db; display: inline-block;">
-                        🙋‍♂️ Poser une question
-                    </a>
-                </div>
-
             </div>
-        </div>
-        <div id="zone-faq" class="faq-container" style="display: none;">
-            <h2 style="margin-bottom: 15px; font-size: 1.3rem;">💡 Questions fréquentes</h2>
-                <div id="liste-faq">
-                </div>
+
         </div>
     </main>
 
@@ -124,6 +130,19 @@
                     btnVu.style.backgroundColor = "#2ecc71"; // On remet le beau vert
                     btnVu.style.opacity = "1";
                 }
+            }
+
+            // --- GESTION DE LA CHECKLIST ---
+            const zoneDocs = document.getElementById('zone-documents');
+            const listeDocs = document.getElementById('liste-documents');
+
+            if (info.documents && info.documents.length > 0) {
+                zoneDocs.style.display = 'block';
+                listeDocs.innerHTML = info.documents.map(doc => `
+                    <label class="checklist-item">
+                        <input type="checkbox"> ${doc}
+                    </label>
+                `).join('');
             }
 
             // --- GESTION DE LA FAQ ---

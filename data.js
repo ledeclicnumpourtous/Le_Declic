@@ -9,6 +9,13 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         image: "https://via.placeholder.com/300x180", //image miniature
         tags: ["Permis", "ANTS", "NEPH"], // les badges
         lienOfficiel: "https://permisdeconduire.ants.gouv.fr/",
+        documents: [
+            "Une e-photo (avec le code à 22 caractères)",
+            "Ta pièce d'identité (recto-verso)",
+            "Un justificatif de domicile de moins de 6 mois",
+            "Ton ASSR ou un justificatif de SNU",
+            "Si tu es hébergé(e) : Pièce d'identité de l'hébergeur, son justificatif de domicile et une attestation d'hébergement"
+        ],
         // --- La FAQ ---
         faq: [
             { 
@@ -73,6 +80,9 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         image: "https://via.placeholder.com/300x180",
         tags: ["Google", "Gmail", "Bureautique"],
         lienOfficiel: "https://accounts.google.com/",
+        documents: [
+            "Un numéro de téléphone portable (obligatoire pour recevoir le SMS de sécurité)"
+        ],
         faq: [
             { 
                 question: "Est-ce que c'est gratuit ?", 
@@ -94,6 +104,10 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         image: "https://via.placeholder.com/300x180",
         tags: ["Google", "Gmail", "Bureautique", "Email"],
         lienOfficiel: "https://mail.google.com/",
+        documents: [
+            "L'adresse e-mail exacte de la personne à qui tu écris (le destinataire)", 
+            "Le document à envoyer en pièce jointe (comme ton CV, si besoin)"
+        ],
         faq: [
             { 
                 question: "C'est quoi la différence entre CC et CCI ?", 
