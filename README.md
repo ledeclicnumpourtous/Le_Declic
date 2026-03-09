@@ -38,13 +38,13 @@ Modifier data.js : Ouvrez le fichier et ajoutez un nouveau bloc dans l'objet cat
     categorie: "nom_categorie", // Doit être : sante, emploi, papiers, logement, outils ou aide
     tags: ["Mot-clé1", "Mot-clé2"],
     lienOfficiel: "[https://lien-vers-demarche.gouv.fr](https://lien-vers-demarche.gouv.fr)"
-},'''
+},```
 
 Mettre à jour le référencement : Pour que Google trouve cette nouvelle page, ajoutez son lien dans le fichier sitemap.xml :
-'''javascript
+```javascript
 <url>
   <loc>https://ledeclicnumpourtous.github.io/Le_Declic/video.html?id=votre-id-unique</loc>
   <priority>0.8</priority>
-</url>'''
+</url>```
 
 Enregistrer : Validez vos modifications sur GitHub via un Commit. Le site se mettra à jour automatiquement en quelques minutes.
