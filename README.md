@@ -41,9 +41,9 @@ Modifier data.js : Ouvrez le fichier et ajoutez un nouveau bloc dans l'objet cat
 
 Mettre à jour le référencement : Pour que Google trouve cette nouvelle page, ajoutez son lien dans le fichier sitemap.xml :
 
-'<url>
+'<url>'
   <loc>https://ledeclicnumpourtous.github.io/Le_Declic/video.html?id=votre-id-unique</loc>
   <priority>0.8</priority>
-</url>'
+'</url>'
 
 Enregistrer : Validez vos modifications sur GitHub via un Commit. Le site se mettra à jour automatiquement en quelques minutes.
