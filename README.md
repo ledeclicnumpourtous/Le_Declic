@@ -23,7 +23,7 @@ Le site est consultable en ligne à l'adresse suivante :
 ## 📝 Licence
 Ce projet est sous licence **MIT** (libre de droit pour un usage solidaire).
 
-##➕ Ajouter une nouvelle vidéo
+## ➕ Ajouter une nouvelle vidéo
 Le catalogue des vidéos est géré de manière centralisée dans le fichier data.js. 
 Pour ajouter un nouveau tutoriel, suivez ces étapes :
 
