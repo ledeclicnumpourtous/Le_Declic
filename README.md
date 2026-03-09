@@ -29,21 +29,22 @@ Pour ajouter un nouveau tutoriel, suivez ces étapes :
 
 Modifier data.js : Ouvrez le fichier et ajoutez un nouveau bloc dans l'objet catalogue en suivant ce modèle :
 
+```javascript
 "votre-id-unique": {
     titre: "Titre de la vidéo",
     description: "Courte description de la démarche.",
-    youtubeId: "CODE_YOUTUBE", // Les lettres à la fin de l'URL YouTube
+    youtubeId: "CODE_YOUTUBE", // Les lettres à la fin de l'URL de la vidéo
     duree: "X min",
     categorie: "nom_categorie", // Doit être : sante, emploi, papiers, logement, outils ou aide
     tags: ["Mot-clé1", "Mot-clé2"],
-    lienOfficiel: "https://lien-vers-demarche.gouv.fr"
+    lienOfficiel: "[https://lien-vers-demarche.gouv.fr](https://lien-vers-demarche.gouv.fr)"
 },
 
 Mettre à jour le référencement : Pour que Google trouve cette nouvelle page, ajoutez son lien dans le fichier sitemap.xml :
 
-'''<url>'''
+<url>
   <loc>https://ledeclicnumpourtous.github.io/Le_Declic/video.html?id=votre-id-unique</loc>
   <priority>0.8</priority>
-</url>'''
+</url>
 
 Enregistrer : Validez vos modifications sur GitHub via un Commit. Le site se mettra à jour automatiquement en quelques minutes.
