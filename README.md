@@ -45,4 +45,5 @@ Mettre à jour le référencement : Pour que Google trouve cette nouvelle page, 
   <loc>https://ledeclicnumpourtous.github.io/Le_Declic/video.html?id=votre-id-unique</loc>
   <priority>0.8</priority>
 </url>
+
 Enregistrer : Validez vos modifications sur GitHub via un Commit. Le site se mettra à jour automatiquement en quelques minutes.
