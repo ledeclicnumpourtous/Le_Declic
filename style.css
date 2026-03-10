@@ -1,22 +1,47 @@
+/* =========================================
+   VARIABLES GLOBALES (Le dictionnaire du site)
+   ========================================= */
+:root {
+    /* Couleurs de base */
+    --fond-site: #ebf2f8;
+    --orange-declic: #ff6b35;
+    --blanc-pur: #ffffff;
+    
+    /* Couleurs de texte */
+    --texte-principal: #333333;
+    --texte-titre: #2c3e50;
+    --texte-secondaire: #7f8c8d;
+    
+    /* Couleurs d'interface */
+    --bordure-claire: #eeeeee;
+    --bordure-sombre: #e0e0e0;
+    --vert-succes: #2ecc71;
+    --bleu-info: #3498db;
+    --gris-badge: #f1f2f6;
+}
+
+/* =========================================*/
+
 body { /*les règles de base : police,couleur */
     font-family: 'Segoe UI', sans-serif; /* sans-serif : backup */
-    background-color: #f8f9fa; /* Gris très clair */
-    color: #333;
+    background-color: var(--fond-site); /* Gris très clair */
+    color: var(--texte-principal);
+    margin: 0; /* Retire les marges par défaut du navigateur */
 }
 
 /* 1. L'entete ' */
 .entete {
-    background: white;
+    background: var(--blanc-pur);
     padding: 15px 40px; /* espace de l'entete */
     display: flex; /* Active le mode alignement */
     justify-content: space-between; /* Pousse le logo à gauche et le bouton à droite */
     align-items: center;
-    border-bottom: 1px solid #eee; /*Une ligne fine grise en bas pour séparer le menu du reste.*/
+    border-bottom: 1px solid var(--bordure-claire); /*Une ligne fine grise en bas pour séparer le menu du reste.*/
 }
 
 .logo {
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: var(--texte-titre);
     display: flex; /* Pour bien aligner l'image avec le texte */
     align-items: center;
     gap: 10px; /*espace entre le logo et le texte*/
@@ -27,13 +52,13 @@ body { /*les règles de base : police,couleur */
 }
 
 .logo small {
-    color: #7f8c8d;
+    color: var(--texte-secondaire);
     font-size: 0.7em; /* 70% de la taille normale */
 }
 
 .bouton-contact {
-    background-color: #ff6b35; /* L'orange image */
-    color: white;
+    background-color: var(--orange-declic); /* L'orange image */
+    color: var(--blanc-pur);
     text-decoration: none; /*Supprime le soulignement moche par défaut des liens bleus.*/
     padding: 10px 20px;
     border-radius: 50px; /* Bords très ronds */
@@ -44,7 +69,7 @@ body { /*les règles de base : police,couleur */
 /* 2. Le titre principal (Recherche) */
 .main-title {
     text-align: center;
-    padding: 0px 20px;
+    padding: 20px 20px 0px 20px;
 }
 
 h1 {
@@ -54,9 +79,14 @@ h1 {
     font-weight: 600;
 }
 
+h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
 /* La barre de recherche */
 .search-container {
-    background: white;
+    background: var(--blanc-pur);
     width: 100%;
     max-width: 700px; /* Ne dépasse pas 700px de large */
     margin: 0 auto; /* Centre la barre */
@@ -64,7 +94,7 @@ h1 {
     border-radius: 50px; /* Bords ronds */
     box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Ombre douce */
     align-items: center;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--bordure-sombre);
 }
 
 .search-input {
@@ -82,11 +112,6 @@ h1 {
     padding-bottom: 50px; /* 👈 Ajoute une marge de sécurité en bas de chaque page */
 }
 
-h2 {
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
 /* Le système de grille */
 .MEP-carte {
     display: grid; /* MEP de grille */
@@ -102,22 +127,17 @@ h2 {
 
 /* Le design d'une carte individuelle */
 .card {
-    background: white;
+    background: var(--blanc-pur);
     padding: 30px;
-    border-radius: 12px; /* Coins arrondis */
-    border: 1px solid #eee; /* Bordure très fine */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02); /* Ombre très légère */
-    cursor: pointer; /* change le curseur de ta souris */
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px); /* La carte monte un peu quand on la survole */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    border: none; /* On enlève le gris triste */
+    border-bottom: 4px solid var(--bordure-sombre); /* Faux effet 3D en bas */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    cursor: pointer;
+    transition: all 0.3s ease; /* Animation fluide */
 }
 
 .icon-circle {
-    background-color: #e3f2fd; /* Bleu très pâle */
     width: 50px;
     height: 50px;
     border-radius: 50%; /* Cercle parfait */
@@ -126,7 +146,7 @@ h2 {
     justify-content: center;
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #2196f3; /* Bleu des icônes */
+    background-color: var(--bordure-claire); /* Couleur de secours */
 }
 
 .card h3 {
@@ -139,11 +159,33 @@ h2 {
     font-size: 0.9rem;
 }
 
+/* --- COULEURS PAR CATÉGORIE --- */
+
+/* On stocke les couleurs pour chaque catégorie */
+.card[data-target="sante"]   { --cat-bg: #e8f5e9; --cat-color: var(--vert-succes); --cat-shadow: rgba(46, 204, 113, 0.15); }
+.card[data-target="emploi"]  { --cat-bg: #e3f2fd; --cat-color: var(--bleu-info);   --cat-shadow: rgba(52, 152, 219, 0.15); }
+.card[data-target="papiers"] { --cat-bg: #f4e8f9; --cat-color: #9b59b6;            --cat-shadow: rgba(155, 89, 182, 0.15); }
+.card[data-target="logement"]{ --cat-bg: #fef5e7; --cat-color: #f1c40f;            --cat-shadow: rgba(241, 196, 15, 0.15); }
+.card[data-target="outils"]  { --cat-bg: #eceff1; --cat-color: #34495e;            --cat-shadow: rgba(52, 73, 94, 0.15); }
+.card[data-target="aide"]    { --cat-bg: #fce4ec; --cat-color: #e84393;            --cat-shadow: rgba(232, 67, 147, 0.15); }
+
+/* le navigateur fait le travail automatiquement pour l'affichage et l'animation ! */
+.card[data-target] .icon-circle { 
+    background-color: var(--cat-bg); 
+    color: var(--cat-color); 
+}
+
+.card[data-target]:hover {
+    transform: translateY(-5px);
+    border-bottom-color: var(--cat-color);
+    box-shadow: 0 15px 25px var(--cat-shadow);
+}
+
 /* --- STYLE DES SECTIONS VIDÉOS --- */
 
 .section-videos {
     margin-top: 40px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--bordure-claire);
     padding-top: 30px;
     animation: fadeIn 0.5s; /* Petit effet d'apparition fluide */
 }
@@ -157,7 +199,7 @@ h2 {
 }
 
 .btn-masquer {
-    color: #7f8c8d;
+    color: var(--texte-secondaire);
     text-decoration: underline; /*souligne pour montrer que c'est un lien*/
     font-size: 0.9rem;
     cursor: pointer;
@@ -165,13 +207,14 @@ h2 {
 
 /* --- CARTE VIDÉO SPÉCIFIQUE --- */
 .card-video {
-    background: white;
+    background: var(--blanc-pur);
     border-radius: 12px;
     overflow: hidden; /* Empêche l'image de dépasser des coins arrondis */
-    border: 1px solid #eee;
+    border: 1px solid var(--bordure-claire);
     box-shadow: 0 2px 5px rgba(0,0,0,0.02);
     cursor: pointer;
     transition: transform 0.2s;
+    height: 100%;
 }
 
 .card-video:hover {
@@ -196,7 +239,7 @@ h2 {
     bottom: 10px;
     right: 10px;
     background: rgba(0, 0, 0, 0.7); /* Fond noir transparent */
-    color: white;
+    color: var(--blanc-pur);
     padding: 2px 8px;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -211,29 +254,22 @@ h2 {
 .video-content h3 {
     font-size: 1.1rem;
     margin-bottom: 5px;
-    color: #2c3e50;
+    color: var(--texte-titre);
 }
 
 .description {
-    color: #7f8c8d;
+    color: var(--texte-secondaire);
     font-size: 0.95rem;
     margin-bottom: 10px;
 }
 
-.video-content small {
-    display: block;
-    color: #95a5a6;
-    margin-bottom: 15px;
-    font-size: 0.8rem;
-}
-
 /* Les petits badges gris (tags) */
 .tags span {
-    background: #f1f2f6;
+    background: var(--gris-badge);
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 0.75rem;
-    color: #2c3e50;
+    color: var(--texte-titre);
     margin-right: 5px;
     display: inline-block;
 }
@@ -249,8 +285,8 @@ h2 {
     position: absolute;
     top: 10px;
     left: 10px;
-    background: #2ecc71; /* Un beau vert pour dire "Validé" */
-    color: white;
+    background: var(--vert-succes); /* Un beau vert pour dire "Validé" */
+    color: var(--blanc-pur);
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -269,17 +305,9 @@ h2 {
 }
 
 /* On stylise la barre de défilement pour la rendre discrète et élégante */
-.carousel::-webkit-scrollbar {
-    height: 8px;
-}
-.carousel::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-.carousel::-webkit-scrollbar-thumb {
-    background: #c1c1c1;
-    border-radius: 10px;
-}
+.carousel::-webkit-scrollbar { height: 8px; }
+.carousel::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+.carousel::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 10px; }
 
 /* On force la largeur des LIENS qui contiennent les cartes */
 .carousel a {
@@ -288,10 +316,18 @@ h2 {
     display: block; /* Indispensable pour qu'un lien se comporte comme une boîte */
 }
 
-/* La carte prend simplement toute la place dans son lien */
-.carousel .card-video {
-    height: 100%; 
+/* =========================================
+   PAGE VIDÉO UNIQUE (LAYOUT, FAQ, CHECKLIST)
+   ========================================= */
+
+.video-page-layout {
+    display: flex;          /* Active les deux colonnes */
+    gap: 30px;              /* Espace entre vidéo et aide */
+    align-items: flex-start;
 }
+
+.video-main-col { flex: 3; } /* La vidéo prend 75% de la largeur */
+.video-side-col { flex: 1; } /* La colonne d'aide prend 1/3 */
 
 /* --- FAQ ACCORDÉON --- */
 .faq-container {
@@ -299,8 +335,8 @@ h2 {
 }
 
 .faq-item {
-    background: white;
-    border: 1px solid #eee;
+    background: var(--blanc-pur);
+    border: 1px solid var(--bordure-claire);
     border-radius: 8px;
     margin-bottom: 10px;
     overflow: hidden;
@@ -328,7 +364,7 @@ h2 {
     transition: max-height 0.3s ease-out, padding 0.3s;
     color: #555;
     line-height: 1.6;
-    border-top: 0 solid #eee;
+    border-top: 0 solid var(--bordure-claire);
 }
 .fleche {
     margin-left: 15px; /* Évite que la flèche ne colle au texte */
@@ -343,24 +379,10 @@ h2 {
     border-top-width: 1px;
 }
 
-.video-page-layout {
-    display: flex;          /* Active les deux colonnes */
-    gap: 30px;              /* Espace entre vidéo et aide */
-    align-items: flex-start;
-}
-
-.video-main-col {
-    flex: 3;                /* La vidéo prend 75% de la largeur */
-}
-
-.video-side-col {
-    flex: 1;                /* La colonne d'aide prend 1/3 */
-}
-
 /* --- DESIGN DE LA CHECKLIST (PC & MOBILE) --- */
 .checklist-container {
     background-color: #fff9f4;
-    border-left: 5px solid #ff6b35;
+    border-left: 5px solid var(--orange-declic);
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -383,7 +405,7 @@ h2 {
 
 .lexique-container {
     background-color: #f0f8ff; /* Bleu très très pâle (AliceBlue) */
-    border-left: 5px solid #3498db; /* Bleu information */
+    border-left: 5px solid var(--bleu-info); /* Bleu information */
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -397,7 +419,7 @@ h2 {
 
 .lexique-mot {
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--texte-titre);
     display: block; /* Met le mot sur sa propre ligne */
     margin-bottom: 2px;
 }
