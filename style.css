@@ -501,4 +501,16 @@ h2 {
         flex-direction: column;
         gap: 5px;
     }
+    /* 5. Correction des boutons de la page vidéo */
+    .video-main-col .card > div {
+        flex-direction: column; /* Empile les éléments à la verticale */
+        align-items: stretch !important; /* Force les boîtes à s'étirer sur toute la largeur */
+    }
+    
+    .video-main-col .bouton-contact {
+        display: block !important; /* Écrase le style inline-block du HTML */
+        width: 100% !important;
+        box-sizing: border-box;
+        margin-top: 5px; /* Laisse un peu d'espace entre les boutons */
+    }
 }
