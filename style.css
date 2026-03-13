@@ -109,7 +109,7 @@ h2 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 50px; /* 👈 Ajoute une marge de sécurité en bas de chaque page */
+    padding: 0px 20px 50px 20px; 
 }
 
 /* Le système de grille */
