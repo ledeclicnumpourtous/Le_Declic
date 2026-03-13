@@ -108,7 +108,7 @@
             document.getElementById('titre-video').innerText = info.titre; //cherhce la balise <h1> avec ID 'titre-video' et change le texte
             document.getElementById('desc-video').innerText = info.description;
             // On construit le lien YouTube
-            document.getElementById('player-youtube').src = "https://www.youtube.com/embed/" + info.youtubeId; //cration du lien youtube et chargement de la video avec ".src"
+            document.getElementById('player-youtube').src = "https://www.youtube.com/embed/" + info.youtubeId; //création du lien youtube et chargement de la video avec ".src"
             document.title = info.titre + " - Le Déclic";//Chang le titre de la page
 
             // Gestion du lien officiel
@@ -132,7 +132,7 @@
                 } else {
                     // État "Pas encore vu"
                     btnVu.innerText = "Marquer comme vue";
-                    btnVu.style.backgroundColor = "#2ecc71"; // On remet le beau vert
+                    btnVu.style.backgroundColor = "#2ecc71"; // On remet le vert
                     btnVu.style.opacity = "1";
                 }
             }

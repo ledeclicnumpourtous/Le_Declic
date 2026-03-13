@@ -344,7 +344,6 @@
                 if (titreOk || tagOk) {
                     nombreTrouve++;
                     
-                    // On recycle ton code de création de carte (copier-coller intelligent)
                     const tagsHTML = info.tags.map(tag => `<span>${tag}</span>`).join(' ');
                     
                     const carteHTML = `
@@ -366,7 +365,7 @@
                 }
             }
 
-            // Petit détail UX : Afficher combien on a trouvé
+            // Afficher combien on a trouvé
             if (nombreTrouve === 0) {
                 containerResultats.innerHTML = '<p>Aucun résultat trouvé pour cette recherche.</p>';
                 compteurResultats.innerText = '';
