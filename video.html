@@ -145,7 +145,8 @@
                 zoneDocs.style.display = 'block';
                 listeDocs.innerHTML = info.documents.map(doc => `
                     <label class="checklist-item">
-                        <input type="checkbox"> ${doc}
+                        <input type="checkbox" class="doc-checkbox"> 
+                        <span class="doc-texte">${doc}</span>
                     </label>
                 `).join('');
             }
