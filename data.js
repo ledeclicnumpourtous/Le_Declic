@@ -154,7 +154,7 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
     //video CAF
     "connexion-caf": {
         titre: "Connexion et Inscription CAF",
-        description: "Accéder à ton compte CAF ou en créer un pour la première fois[cite: 2].",
+        description: "Accéder à ton compte CAF ou en créer un pour la première fois.",
         youtubeId: "VIDb8UpSds0",
         duree: "2 min",
         categorie: "aide", 
@@ -162,21 +162,21 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
         tags: ["CAF", "Aides", "FranceConnect", "Démarches"],
         lienOfficiel: "https://www.caf.fr/",
         documents: [
-            "Ton numéro de sécurité sociale si tu en as un [cite: 11]",
-            "Ta pièce d'identité [cite: 11]"
+            "Ton numéro de sécurité sociale si tu en as un",
+            "Ta pièce d'identité"
         ],
         lexique: [
-            { mot: "FranceConnect", definition: "Elle te permet de se connecter via un autre service de l’État, comme les impôts ou Ameli, sans créer de nouveau mot de passe[cite: 9]." },
-            { mot: "Numéro de sécurité sociale", definition: "Numéro présent sur ta carte vitale[cite: 14]." }
+            { mot: "FranceConnect", definition: "Elle te permet de se connecter via un autre service de l’État, comme les impôts ou Ameli, sans créer de nouveau mot de passe." },
+            { mot: "Numéro de sécurité sociale", definition: "Numéro présent sur ta carte vitale." }
         ],
         faq: [
             { 
                 question: "Puis-je me connecter sans mot de passe CAF ?", 
-                reponse: "Oui, la deuxième option est FranceConnect[cite: 9]. Elle te permet de se connecter via un autre service de l’État, comme les impôts ou Ameli, sans créer de nouveau mot de passe[cite: 9]." 
+                reponse: "Oui, la deuxième option est FranceConnect[cite: 9]. Elle te permet de se connecter via un autre service de l’État, comme les impôts ou Ameli, sans créer de nouveau mot de passe." 
             },
             { 
                 question: "De quoi ai-je besoin pour créer un compte ?", 
-                reponse: "Tu auras besoin de ton numéro de sécurité sociale si tu en as un ainsi que ta pièce d'identité[cite: 11]." 
+                reponse: "Tu auras besoin de ton numéro de sécurité sociale si tu en as un ainsi que ta pièce d'identité." 
             }
         ]
     }
