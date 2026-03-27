@@ -149,5 +149,35 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
                 reponse: "Tu peux vérifier dans le dossier 'Messages envoyés' dans la colonne de gauche de ton compte Gmail." 
             }
         ]
+    },
+
+    //video CAF
+    "connexion-caf": {
+        titre: "Connexion et Inscription CAF",
+        description: "Accéder à ton compte CAF ou en créer un pour la première fois[cite: 2].",
+        youtubeId: "VIDb8UpSds0",
+        duree: "2 min",
+        categorie: "aide", 
+        image: "https://via.placeholder.com/300x180",
+        tags: ["CAF", "Aides", "FranceConnect", "Démarches"],
+        lienOfficiel: "https://www.caf.fr/",
+        documents: [
+            "Ton numéro de sécurité sociale si tu en as un [cite: 11]",
+            "Ta pièce d'identité [cite: 11]"
+        ],
+        lexique: [
+            { mot: "FranceConnect", definition: "Elle te permet de se connecter via un autre service de l’État, comme les impôts ou Ameli, sans créer de nouveau mot de passe[cite: 9]." },
+            { mot: "Numéro de sécurité sociale", definition: "Numéro présent sur ta carte vitale[cite: 14]." }
+        ],
+        faq: [
+            { 
+                question: "Puis-je me connecter sans mot de passe CAF ?", 
+                reponse: "Oui, la deuxième option est FranceConnect[cite: 9]. Elle te permet de se connecter via un autre service de l’État, comme les impôts ou Ameli, sans créer de nouveau mot de passe[cite: 9]." 
+            },
+            { 
+                question: "De quoi ai-je besoin pour créer un compte ?", 
+                reponse: "Tu auras besoin de ton numéro de sécurité sociale si tu en as un ainsi que ta pièce d'identité[cite: 11]." 
+            }
+        ]
     }
 };

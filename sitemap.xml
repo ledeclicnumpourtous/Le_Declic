@@ -31,4 +31,9 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://ledeclicnumpourtous.github.io/Le_Declic/video.html?id=connexion-caf</loc>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
