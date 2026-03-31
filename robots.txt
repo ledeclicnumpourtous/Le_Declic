@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://ledeclicnumpourtous.github.io/Le_Declic/sitemap.xml
+Sitemap: https://ledeclicnumpourtous.fr/sitemap.xml
