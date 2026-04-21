@@ -179,5 +179,143 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
                 reponse: "Tu auras besoin de ton numéro de sécurité sociale si tu en as un ainsi que ta pièce d'identité." 
             }
         ]
+    },
+
+    //video Indeed
+    "tout-savoir-indeed": {
+        titre: "Tout savoir sur INDEED !",
+        description: "Apprendre à créer un compte, utiliser les filtres de recherche et optimiser son profil pour trouver un emploi.",
+        youtubeId: "NPtijBn6BbI",
+        duree: "3 min",
+        categorie: "emploi",
+        image: "https://via.placeholder.com/300x180",
+        tags: ["Indeed", "Emploi", "Recherche"],
+        lienOfficiel: "https://fr.indeed.com/",
+        documents: [
+            "Une adresse e-mail",
+            "Un numéro de téléphone",
+            "Ton CV à jour"
+        ],
+        lexique: [
+            { mot: "Intitulé spécifique", definition: "Un terme précis pour ta recherche (ex: 'équipier polyvalent') plutôt qu'un mot général comme 'travail'." },
+            { mot: "Filtres", definition: "Options pour trier les annonces selon tes besoins (distance, type de contrat, horaires, date de publication)." }
+        ],
+        faq: [
+            { 
+                question: "Pourquoi est-il important de postuler rapidement ?", 
+                reponse: "Postuler à une offre publiée récemment (comme dans les dernières 24h) augmente tes chances d'obtenir un entretien." 
+            },
+            { 
+                question: "Quelles informations faut-il renseigner sur son profil ?", 
+                reponse: "Il faut indiquer tes coordonnées (mail, téléphone, localisation), ton CV, tes qualifications/expériences et tes préférences (salaire, horaire)." 
+            }
+        ]
+    },
+    // Video Aide au logement CAF
+    "aide-logement-caf": {
+        titre: "Aide au logement - CAF",
+        description: "Vérifier ses droits et faire sa demande d'aide au logement (APL, ALS, ALF) simplement.",
+        youtubeId: "1iaLjGcPsaw",
+        duree: "2 min",
+        categorie: "aide",
+        image: "https://via.placeholder.com/300x180",
+        tags: ["CAF", "Logement", "Aides"],
+        lienOfficiel: "https://www.caf.fr/",
+        documents: [
+            "Ton contrat de location (bail)",
+            "Un RIB à ton nom",
+            "Une attestation de loyer (selon ta situation)"
+        ],
+        lexique: [
+            { mot: "APL", definition: "Aide Personnalisée au Logement, la plus courante pour t'aider à payer ton loyer." },
+            { mot: "Simulation", definition: "Un outil en ligne qui permet d'estimer le montant de l'aide que tu pourrais recevoir avant de faire ta vraie demande." }
+        ],
+        faq: [
+            {
+                question: "Qui peut toucher les aides au logement ?",
+                reponse: "Les locataires, les colocataires et les personnes logées en foyer peuvent en bénéficier."
+            },
+            {
+                question: "Quand l'aide est-elle versée ?",
+                reponse: "Si la demande est acceptée, l'aide est généralement versée à partir du mois suivant."
+            }
+        ]
+    },
+
+    // Video Tout savoir sur AMELI
+    "tout-savoir-ameli": {
+        titre: "Tout savoir sur AMELI (post-connexion)",
+        description: "Comprendre comment utiliser son espace Ameli pour ses démarches de santé.",
+        youtubeId: "3T9H4_wFHjc",
+        duree: "4 min",
+        categorie: "sante",
+        image: "https://via.placeholder.com/300x180",
+        tags: ["Ameli", "Santé", "Sécurité Sociale"],
+        lienOfficiel: "https://assure.ameli.fr/",
+        documents: [
+            "Ton numéro de sécurité sociale",
+            "Ton code secret Ameli"
+        ],
+        lexique: [
+            { mot: "Ameli", definition: "C'est l'assurance maladie en ligne, pour suivre tes remboursements de santé." },
+            { mot: "Carte Vitale", definition: "La carte verte à présenter chez le médecin pour être remboursé plus rapidement." }
+        ],
+        faq: [
+            {
+                question: "Comment télécharger une attestation de droits ?",
+                reponse: "Tu peux la télécharger directement dans la rubrique 'Mes démarches' de ton compte Ameli."
+            }
+        ]
+    },
+
+    // Video ANTS Carte d'identité et passeport
+    "ants-cni-passeport": {
+        titre: "ANTS - Carte d'identité et passeport",
+        description: "Faire une pré-demande de carte d'identité ou de passeport sur le site de l'ANTS.",
+        youtubeId: "qJDMl6B6lYI",
+        duree: "3 min",
+        categorie: "papiers",
+        image: "https://via.placeholder.com/300x180",
+        tags: ["ANTS", "Identité", "Passeport"],
+        lienOfficiel: "https://passeport.ants.gouv.fr/",
+        documents: [
+            "Un justificatif de domicile récent",
+            "Une photo d'identité conforme",
+            "Un timbre fiscal (pour le passeport ou en cas de perte de la CNI)"
+        ],
+        lexique: [
+            { mot: "Pré-demande", definition: "C'est un formulaire en ligne à remplir avant ton rendez-vous en mairie pour gagner du temps." },
+            { mot: "Timbre fiscal", definition: "C'est une taxe de l'État que tu achètes en ligne pour payer la fabrication d'un passeport." }
+        ],
+        faq: [
+            {
+                question: "La pré-demande suffit-elle pour avoir sa carte ?",
+                reponse: "Non, il faut obligatoirement prendre rendez-vous en mairie pour valider le dossier et prendre tes empreintes."
+            }
+        ]
+    },
+
+    // Video Connexion France Connect
+    "connexion-franceconnect": {
+        titre: "Connexion France Connect",
+        description: "Apprendre à s'identifier sur les services de l'État grâce à France Connect.",
+        youtubeId: "s52Lu4g5MUc",
+        duree: "2 min",
+        categorie: "outils",
+        image: "https://via.placeholder.com/300x180",
+        tags: ["FranceConnect", "Démarches", "Connexion"],
+        lienOfficiel: "https://franceconnect.gouv.fr/",
+        documents: [
+            "Tes identifiants de l'un des services partenaires (Impôts, Ameli, l'Identité Numérique La Poste, etc.)"
+        ],
+        lexique: [
+            { mot: "Identifiant", definition: "Le nom d'utilisateur ou l'email qui te sert à te connecter." }
+        ],
+        faq: [
+            {
+                question: "France Connect est-il sécurisé ?",
+                reponse: "Oui, c'est un dispositif mis en place par l'État français pour garantir des connexions hautement sécurisées."
+            }
+        ]
     }
 };
