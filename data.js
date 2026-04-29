@@ -317,5 +317,38 @@ const catalogue = { //création d'une variable, fonctionne comme un dictionnaire
                 reponse: "Oui, c'est un dispositif mis en place par l'État français pour garantir des connexions hautement sécurisées."
             }
         ]
+    },
+
+    // Video RSA Jeunes Actifs
+    "rsa-jeunes-actifs": {
+        titre: "RSA Jeunes Actifs - Démarches",
+        description: "Apprendre à vérifier ses droits et faire une demande de RSA Jeune Actif (pour les moins de 25 ans).",
+        youtubeId: "NjGzeom-te4",
+        duree: "3 min",
+        categorie: "aide",
+        image: "https://via.placeholder.com/300x180",
+        tags: ["RSA", "CAF", "Jeunes", "Aides"],
+        lienOfficiel: "https://www.caf.fr/",
+        documents: [
+            "Le formulaire Cerfa 'Demande complémentaire pour les jeunes de moins de 25 ans' rempli",
+            "Un RIB (Relevé d'Identité Bancaire)",
+            "Des justificatifs de revenus",
+            "Un justificatif de logement"
+        ],
+        lexique: [
+            { mot: "Simulation", definition: "Un outil en ligne sur le site de la CAF qui te permet d'estimer tes droits au RSA avant de faire la vraie demande." },
+            { mot: "Déclaration trimestrielle", definition: "Une déclaration obligatoire à faire tous les 3 mois sur le site de la CAF pour continuer à percevoir le RSA." },
+            { mot: "Référent", definition: "Un conseiller (de France Travail, Mission Locale, etc.) vers qui tu seras obligatoirement orienté pour t'accompagner vers l'emploi." }
+        ],
+        faq: [
+            {
+                question: "Puis-je faire ma demande à 100% en ligne ?",
+                reponse: "Non, en tant que jeune de moins de 25 ans, tu dois obligatoirement remplir le formulaire papier complémentaire ('Demande complémentaire pour les jeunes de moins de 25 ans') et l'envoyer à la CAF en plus de ta demande en ligne."
+            },
+            {
+                question: "Que se passe-t-il si je ne fais pas ma déclaration trimestrielle ?",
+                reponse: "Attention, cette déclaration est obligatoire ! Si tu ne la fais pas, le versement de ton RSA sera suspendu."
+            }
+        ]
     }
 };
